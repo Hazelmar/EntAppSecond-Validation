@@ -1,19 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-/// <summary>
-/// Summary description for Class1
-/// </summary>
-public class Student
+
+namespace EntAppSecond.Pages.Model
 {
-    [Required]
-    public string StudentID { get; set; } = " ";
-    [Required]
-    public string FirstName { get; set; } = " ";
-    [Required]
-    public string LastName { get; set; } = " ";
-    public Student()
-	{
-		
-	}
+    public class Student
+    {
+        [Required]
+        public string StudentID { get; set; } = " ";
+        [Required(ErrorMessage = "Enter a valid Student number")]
+       
+        public string FirstName { get; set; } = " ";
+        [Display(Name = "First Name")]
+        [Required]
+        public string LastName { get; set; } = " ";
+        
+       
+        public Student()
+        {
+
+        }
+    }
 }
